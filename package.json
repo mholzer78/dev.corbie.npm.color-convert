@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mholzer78/dev.corbie.api.git"
+    "url": "git+https://github.com/mholzer78/dev.corbie.npm.color-convert.git"
   },
   "keywords": [
     "HEX",
@@ -25,10 +25,10 @@
     "HWB"
   ],
   "bugs": {
-    "url": "https://github.com/mholzer78/dev.corbie.api/issues"
+    "url": "https://github.com/mholzer78/dev.corbie.npm.color-convert/issues"
   },
   "homepage": "https://corbie.dev",
-  "author": "",
+  "author": "Michel Holzer @ corbie.dev",
   "license": "ISC",
   "files": [
     "dist"
