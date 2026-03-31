@@ -112,3 +112,25 @@ test('rgb2hex upper limit', () => {
     }),
   );
 });
+
+test('oklch2hsv lower limit', () => {
+  expect(() => cbColorConvert.oklch.hsv([0, 1, 0])).toThrowError(
+    expect.objectContaining({
+      message: 'Wrong input format. Item [1] must be between 0 and 0.4',
+    }),
+  );
+});
+test('oklch2hsv upper limit 1', () => {
+  expect(() => cbColorConvert.oklch.hsv([101, 0, 0])).toThrowError(
+    expect.objectContaining({
+      message: 'Wrong input format. Item [0] must be between 0 and 100',
+    }),
+  );
+});
+test('oklch2hsv upper limit 2', () => {
+  expect(() => cbColorConvert.oklch.hsv([0, 0, 365])).toThrowError(
+    expect.objectContaining({
+      message: 'Wrong input format. Item [2] must be between 0 and 360',
+    }),
+  );
+});

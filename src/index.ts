@@ -3,6 +3,7 @@ import Hex from './modules/Hex.js';
 import Hwb from './modules/Hwb.js';
 import Hsv from './modules/Hsv.js';
 import Hsl from './modules/Hsl.js';
+import Oklch from './modules/Oklch.js';
 import Cmyk from './modules/Cmyk.js';
 import Name from './modules/Name.js';
 
@@ -12,6 +13,7 @@ class CbColorConvert {
   hwb = new Hwb(this.rgb);
   hsv = new Hsv(this.rgb);
   hsl = new Hsl(this.rgb);
+  oklch = new Oklch(this.rgb);
   cmyk = new Cmyk(this.rgb);
   name = new Name(this.rgb);
 }

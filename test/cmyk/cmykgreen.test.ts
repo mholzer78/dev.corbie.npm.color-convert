@@ -6,7 +6,7 @@ import { TCbCmyk } from '../../src/modules/Color.js';
 let master = colors.green;
 
 test('cmyk2rgb as params', () => {
-  expect(cbColorConvert.cmyk.hex(...master.cmyk as TCbCmyk)).toBe('03ab6d');
+  expect(cbColorConvert.cmyk.hex(...(master.cmyk as TCbCmyk))).toBe('03ab6d');
 });
 test('cmyk2rgb as object', () => {
   expect(cbColorConvert.cmyk.hex(master.cmykObj)).toBe('03ab6d');
@@ -18,17 +18,32 @@ test('cmyk2name', () => {
   expect(cbColorConvert.cmyk.name(master.cmyk as TCbCmyk)).toBe(master.name);
 });
 test('cmyk2rgb', () => {
-  expect(cbColorConvert.cmyk.rgb(master.cmyk as TCbCmyk)).toStrictEqual([3, 171, 109]);
+  expect(cbColorConvert.cmyk.rgb(master.cmyk as TCbCmyk)).toStrictEqual([
+    3, 171, 109,
+  ]);
 });
 test('cmyk2hwb', () => {
-  expect(cbColorConvert.cmyk.hwb(master.cmyk as TCbCmyk)).toStrictEqual([158, 1, 33]);
+  expect(cbColorConvert.cmyk.hwb(master.cmyk as TCbCmyk)).toStrictEqual([
+    158, 1, 33,
+  ]);
 });
 test('cmyk2hsv', () => {
-  expect(cbColorConvert.cmyk.hsv(master.cmyk as TCbCmyk)).toStrictEqual([158, 98.2, 67.1]);
+  expect(cbColorConvert.cmyk.hsv(master.cmyk as TCbCmyk)).toStrictEqual([
+    158, 98.2, 67.1,
+  ]);
 });
 test('cmyk2hsl', () => {
-  expect(cbColorConvert.cmyk.hsl(master.cmyk as TCbCmyk)).toStrictEqual([158, 96.6, 34.1]);
+  expect(cbColorConvert.cmyk.hsl(master.cmyk as TCbCmyk)).toStrictEqual([
+    158, 96.6, 34.1,
+  ]);
+});
+test('cmyk2oklch', () => {
+  expect(cbColorConvert.cmyk.oklch(master.cmyk as TCbCmyk)).toStrictEqual(
+    master.oklch,
+  );
 });
 test('cmyk2cmyk', () => {
-  expect(cbColorConvert.cmyk.cmyk(master.cmyk as TCbCmyk)).toStrictEqual(master.cmyk);
+  expect(cbColorConvert.cmyk.cmyk(master.cmyk as TCbCmyk)).toStrictEqual(
+    master.cmyk,
+  );
 });

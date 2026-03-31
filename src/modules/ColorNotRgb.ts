@@ -25,6 +25,10 @@ export default abstract class ColorNotRgb extends Color {
     this.validate(args);
     return this.master.toHsl(this.toRgb(args));
   }
+  toOklch(args: TCbDefault) {
+    this.validate(args);
+    return this.master.toOklch(this.toRgb(args));
+  }
   toCmyk(args: TCbDefault) {
     this.validate(args);
     return this.master.toCmyk(this.toRgb(args));

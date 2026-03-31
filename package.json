@@ -1,7 +1,7 @@
 {
   "name": "@corbie.dev/color-convert",
-  "version": "1.0.1",
-  "description": "Color converter (HEX, RGB, CMYK, HSL, HSV, ...)",
+  "version": "1.0.3",
+  "description": "Color converter (HEX, RGB, CMYK, HSL, HSV, OKLCH...)",
   "scripts": {
     "build": "tsc",
     "ci": "npm run build && npm run check-format && npm run test",
@@ -22,7 +22,8 @@
     "CMYK",
     "HSL",
     "HSV",
-    "HWB"
+    "HWB",
+    "OKLCH"
   ],
   "bugs": {
     "url": "https://github.com/mholzer78/dev.corbie.npm.color-convert/issues"

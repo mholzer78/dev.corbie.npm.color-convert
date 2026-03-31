@@ -1,33 +1,51 @@
 import cbColorConvert from '../../src/index.js';
 import { test, expect } from 'vitest';
 import colors from '../colors.json';
+import { TCbDefault } from '../../src/modules/Color.js';
 
 let master = colors.blue;
 
 test('hsl2rgb as params', () => {
-  expect(cbColorConvert.hsl.hex(...master.hsl)).toBe(master.hex);
+  expect(cbColorConvert.hsl.hex(...(master.hsl as TCbDefault))).toBe(
+    master.hex,
+  );
 });
 test('hsl2hex as object', () => {
   expect(cbColorConvert.hsl.hex(master.hslObj)).toBe(master.hex);
 });
 test('hsl2hex', () => {
-  expect(cbColorConvert.hsl.hex(master.hsl)).toBe(master.hex);
+  expect(cbColorConvert.hsl.hex(master.hsl as TCbDefault)).toBe(master.hex);
 });
 test('hsl2name', () => {
-  expect(cbColorConvert.hsl.name(master.hsl)).toBe(master.name);
+  expect(cbColorConvert.hsl.name(master.hsl as TCbDefault)).toBe(master.name);
 });
 test('hsl2rgb', () => {
-  expect(cbColorConvert.hsl.rgb(master.hsl)).toStrictEqual(master.rgb);
+  expect(cbColorConvert.hsl.rgb(master.hsl as TCbDefault)).toStrictEqual(
+    master.rgb,
+  );
 });
 test('hsl2hwb', () => {
-  expect(cbColorConvert.hsl.hwb(master.hsl)).toStrictEqual(master.hwb);
+  expect(cbColorConvert.hsl.hwb(master.hsl as TCbDefault)).toStrictEqual(
+    master.hwb,
+  );
 });
 test('hsl2hsv', () => {
-  expect(cbColorConvert.hsl.hsv(master.hsl)).toStrictEqual(master.hsv);
+  expect(cbColorConvert.hsl.hsv(master.hsl as TCbDefault)).toStrictEqual(
+    master.hsv,
+  );
 });
 test('hsl2hsl', () => {
-  expect(cbColorConvert.hsl.hsl(master.hsl)).toStrictEqual(master.hsl);
+  expect(cbColorConvert.hsl.hsl(master.hsl as TCbDefault)).toStrictEqual(
+    master.hsl,
+  );
+});
+test('hsl2oklch', () => {
+  expect(cbColorConvert.hsl.oklch(master.hsl as TCbDefault)).toStrictEqual(
+    master.oklch,
+  );
 });
 test('hsl2cmyk', () => {
-  expect(cbColorConvert.hsl.cmyk(master.hsl)).toStrictEqual(master.cmyk);
+  expect(cbColorConvert.hsl.cmyk(master.hsl as TCbDefault)).toStrictEqual(
+    master.cmyk,
+  );
 });

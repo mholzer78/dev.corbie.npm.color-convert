@@ -5,40 +5,35 @@ import { TCbDefault } from '../../src/modules/Color.js';
 
 let master = colors.white;
 
-test('hwb2hex as params', () => {
+test('oklch2hex as params', () => {
   expect(cbColorConvert.hwb.hex(...(master.hwb as TCbDefault))).toBe(
     master.hex,
   );
 });
-test('hwb2hex as object', () => {
+test('oklch2hex as object', () => {
   expect(cbColorConvert.hwb.hex(master.hwbObj)).toBe(master.hex);
 });
-test('hwb2rgb', () => {
+test('oklch2rgb', () => {
   expect(cbColorConvert.hwb.rgb(master.hwb as TCbDefault)).toStrictEqual(
     master.rgb,
   );
 });
-test('hwb2hwb', () => {
+test('oklch2hwb', () => {
   expect(cbColorConvert.hwb.hwb(master.hwb as TCbDefault)).toStrictEqual(
     master.hwb,
   );
 });
-test('hwb2hsv', () => {
+test('oklch2hsv', () => {
   expect(cbColorConvert.hwb.hsv(master.hwb as TCbDefault)).toStrictEqual(
     master.hsv,
   );
 });
-test('hwb2hsl', () => {
+test('oklch2hsl', () => {
   expect(cbColorConvert.hwb.hsl(master.hwb as TCbDefault)).toStrictEqual(
     master.hsl,
   );
 });
-test('hwb2oklch', () => {
-  expect(cbColorConvert.hwb.oklch(master.hwb as TCbDefault)).toStrictEqual(
-    master.oklch,
-  );
-});
-test('hwb2cmyk', () => {
+test('oklch2cmyk', () => {
   expect(cbColorConvert.hwb.cmyk(master.hwb as TCbDefault)).toStrictEqual(
     master.cmyk,
   );

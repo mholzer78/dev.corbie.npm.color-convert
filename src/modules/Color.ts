@@ -6,6 +6,7 @@ export type TCbRgbObj = { r: number; g: number; b: number };
 export type TCbHslObj = { h: number; s: number; l: number };
 export type TCbHsvObj = { h: number; s: number; v: number };
 export type TCbHwbObj = { h: number; w: number; b: number };
+export type TCbOklchObj = { l: number; c: number; h: number };
 export type TCbCmykObj = { c: number; m: number; y: number; k: number };
 
 type InputArgs =
@@ -17,6 +18,7 @@ type InputArgs =
   | [TCbHslObj]
   | [TCbHsvObj]
   | [TCbHwbObj]
+  | [TCbOklchObj]
   | [TCbCmykObj]
   | [string];
 
@@ -56,6 +58,7 @@ export default abstract class Color {
   hwb = this.withNormalizedArgs(this.toHwb.bind(this));
   hsv = this.withNormalizedArgs(this.toHsv.bind(this));
   hsl = this.withNormalizedArgs(this.toHsl.bind(this));
+  oklch = this.withNormalizedArgs(this.toOklch.bind(this));
   cmyk = this.withNormalizedArgs(this.toCmyk.bind(this));
   name = this.withNormalizedArgs(this.toName.bind(this));
 
@@ -64,6 +67,7 @@ export default abstract class Color {
   abstract toHwb(args: ColorType): TCbDefault;
   abstract toHsv(args: ColorType): TCbDefault;
   abstract toHsl(args: ColorType): TCbDefault;
+  abstract toOklch(args: ColorType): TCbDefault;
   abstract toCmyk(args: ColorType): TCbCmyk;
   abstract toName(args: ColorType): string;
 
