@@ -190,7 +190,7 @@ export default class Rgb extends Color {
     if (h < 0) h += 360;
 
     return [
-      Math.round(L * 10000) / 10000,
+      Math.round(L * 10000) / 100,
       Math.round(C * 10000) / 10000,
       Math.round(h * 100) / 100,
     ] as TCbDefault;

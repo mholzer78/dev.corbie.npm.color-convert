@@ -63,7 +63,7 @@ With the import in place you can already use the libary like this:
 
 ```javascript
 cbColorConvert.rgb.cmyk(255, 216, 1); // [0,15,100,0]
-cbColorConvert.hwb.hsl([51, 0, 0]); // [51,0,0]
+cbColorConvert.hwb.hsl([51, 0, 0]); // [51,100,50]
 cbColorConvert.hex.rgb('#ffd801'); // [255,216,1]
 ```
 
@@ -71,15 +71,16 @@ cbColorConvert.hex.rgb('#ffd801'); // [255,216,1]
 
 ### What comes in and what comes out?
 
-| color-space | input                             | TS-type    | example                                                     | output   |
-| ----------- | --------------------------------- | ---------- | ----------------------------------------------------------- | -------- |
-| hex         | string                            | string     | `#ffd801` or `ffd801`                                       | string   |
-| name        | string                            | string     | `palegreen` or `coral`                                      | string   |
-| rgb         | 3 params or Array[3] or {r,g,b}   | TCbDefault | `255,216,1` or `[255,216,1]` or `{r:255, g:216, b:1}`       | Array[3] |
-| hwb         | 3 params or Array[3] or {h,w,b}   | TCbDefault | `255,216,1` or `[255,216,1]` or `{h:51, w:0, b:0}`          | Array[3] |
-| hsv         | 3 params or Array[3] or {h,s,v}   | TCbDefault | `255,216,1` or `[255,216,1]` or `{r:51, g:100, b:100}`      | Array[3] |
-| hsl         | 3 params or Array[3] or {h,s,l}   | TCbDefault | `255,216,1` or `[255,216,1]` or `{r:51, g:100, b:50}`       | Array[3] |
-| cmyk        | 4 params or Array[4] or {c,m,y,k} | TCbCmyk    | `0,15,100,0` or `[0,15,100,0]` or `{c:0, m:15, y:100, k:0}` | Array[4] |
+| color-space | input                             | TS-type    | example                                                                       | output   |
+| ----------- | --------------------------------- | ---------- | ----------------------------------------------------------------------------- | -------- |
+| hex         | string                            | string     | `#ffd801` or `ffd801`                                                         | string   |
+| name        | string                            | string     | `palegreen` or `coral`                                                        | string   |
+| rgb         | 3 params or Array[3] or {r,g,b}   | TCbDefault | `255,216,1` or `[255,216,1]` or `{r:255, g:216, b:1}`                         | Array[3] |
+| hwb         | 3 params or Array[3] or {h,w,b}   | TCbDefault | `51,0,0` or `[51,0,0]` or `{h:51, w:0, b:0}`                                  | Array[3] |
+| oklch       | 3 params or Array[3] or {l,c,h}   | TCbDefault | `88.88,0.183,95.75` or `[88.88,0.183,95.75]` or `{l:88.88, c:0.183, h:97,75}` | Array[3] |
+| hsv         | 3 params or Array[3] or {h,s,v}   | TCbDefault | `51,100,100` or `[51,100,100]` or `{r:51, g:100, b:100}`                      | Array[3] |
+| hsl         | 3 params or Array[3] or {h,s,l}   | TCbDefault | `51,100,50` or `[51,100,50]` or `{r:51, g:100, b:50}`                         | Array[3] |
+| cmyk        | 4 params or Array[4] or {c,m,y,k} | TCbCmyk    | `0,15,100,0` or `[0,15,100,0]` or `{c:0, m:15, y:100, k:0}`                   | Array[4] |
 
 > **_NOTE:_** For the HEX input the leading # (hash) is optional, the output won't include it.
 

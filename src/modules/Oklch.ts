@@ -6,7 +6,7 @@ export default class Oklch extends ColorNotRgb {
 
   toRgb(args: TCbDefault): TCbDefault {
     this.validate(args);
-    const L = args[0];
+    const L = args[0] / 100;
     const C = args[1];
     const h = args[2];
 
